@@ -6,8 +6,10 @@
 package nl.rsvier.applikaassie;
 
 /**
- *
+ * comments block :
+ * 
  * @author jurjen
+ * @author Frank
  */
 public class test2 {
     
