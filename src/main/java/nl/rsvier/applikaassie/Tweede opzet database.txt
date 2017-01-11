@@ -80,7 +80,7 @@ idBestelling(PK)	idWinkelwagen(FK)	idKlant(FK)	datumvanbestelling	eventueel: pri
 
 -Bestellingtoestand
 	- idBestellingtoestand integer (PK) (one to one met idKlantproductbestelling)
-	- idKlantProductbestelling (FK) -> kun je idKlant uithalen&product -> kun je Adress uithalen.
+	- idWinkelwagen (FK) -> kun je idKlant uithalen&product -> kun je Adress uithalen.
 	- toestand
 	- datumvanbehandeld date
 	
