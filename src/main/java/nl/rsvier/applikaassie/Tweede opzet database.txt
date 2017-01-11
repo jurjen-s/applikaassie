@@ -1,4 +1,4 @@
-Tweede opzet database
+﻿Tweede opzet database
 
 Actors:
 
@@ -45,8 +45,8 @@ Actors:
 	- voorraad integer
 
 -Winkelwagen
-	-idWinkelwagen (PK)
-	-idKlant (FK)
+	- idWinkelwagen (PK)
+	- idKlant (FK)
 	- aantal integer
 	- prijstotaal double
 
@@ -57,15 +57,15 @@ Actors:
 	-idWinkelwagen (FK)
         -datumvanbestelling date
 	
-  ( Dit is ��n bestelling (maar meerdere kazen van ��n soort mogelijk)
+  ( Dit is één bestelling (maar meerdere kazen van één soort mogelijk)
   hiervan kunnen meerdere gemaakt worden per zodat je ook meerdere kazen besteld
   het totaal wordt in java gebundeld)
-( dit effect geeft: in de database)
+  ( dit effect geeft: in de database)
 
             1(PK)  1 klantid  4 idkaas     10 stuks		prijs 99.90  bestelop 1-1-2017  1
             2      1 klant   99 idkaas     1 stuks		prijs 12.50  bestelop 1-1-2017  1(zelfde moment)
-            3      1 klant   45 idkaas     5 stuks		prijs 62.50  bestelop 2-1-2017	2 (andere winkelwagen)
-            4  ...
+            3      2 klant   45 idkaas     5 stuks		prijs 62.50  bestelop 2-1-2017	2 (andere winkelwagen)
+            4  ... 1 klant   48 idkaas     4 stuks              prijs 39,40  bestelop 2-1-2017  3 
 	    5  ...
 	    ...
 
@@ -78,18 +78,13 @@ idBestelling(PK)	idWinkelwagen(FK)	idKlant(FK)	datumvanbestelling	eventueel: pri
 
 
 
-
-
-
-
-
 -Bestellingtoestand
-	-idBestellingtoestand integer (PK) (one to one met idKlantproductbestelling)
-	-idKlantProductbestelling (FK) -> kun je idKlant uithalen&product -> kun je Adress uithalen.
-	-toestand
-	-datumvanbehandeld date
+	- idBestellingtoestand integer (PK) (one to one met idKlantproductbestelling)
+	- idKlantProductbestelling (FK) -> kun je idKlant uithalen&product -> kun je Adress uithalen.
+	- toestand
+	- datumvanbehandeld date
 	
-	(deze tabel triggerd ��n voorraad)
+	(deze tabel triggerd één voorraad)
 
 	
 
