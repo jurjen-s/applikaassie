@@ -10,7 +10,8 @@ Actors:
 	- e-mail   string
 	- voornaam string
 	- middelnaam string
-	- achternaam string	
+	- achternaam string
+	-status integer	
 
 
 
