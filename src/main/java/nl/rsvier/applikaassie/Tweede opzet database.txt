@@ -21,13 +21,13 @@ Actors:
 	- wachtwoord ??String??
 	- e-mail   string
 	- voornaam string
-	- middelnaam string
+	- tussenvoegsel string
 	- achternaam string
 	- status integer
 - Klant
 	- idKlant (PK) integer
 	- voornaam string
-	- middelnaam string
+	- tussenvoegsel string
 	- achternaam string
 	- telefoonnummer integer
 	- Straat String
