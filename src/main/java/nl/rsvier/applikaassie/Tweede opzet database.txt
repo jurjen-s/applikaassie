@@ -1,0 +1,126 @@
+Tweede opzet database
+
+Actors:
+
+
+-Admin  
+	- idAdmin
+	- wachtwoord
+	- status
+	- e-mail   string
+	- voornaam string
+	- middelnaam string
+	- achternaam string	
+
+
+
+
+- Medewerker
+	- idMedewerker (PK) integer
+	- wachtwoord ??String??
+	- e-mail   string
+	- voornaam string
+	- middelnaam string
+	- achternaam string
+	- status integer
+- Klant
+	- idKlant (PK) integer
+	- voornaam string
+	- middelnaam string
+	- achternaam string
+	- telefoonnummer integer
+	- Straat String
+	- Straatnummer interger
+	- Toevoeging Straatnummer character
+	- Plaats String
+	- Postcode ####.## format
+	- FactuurPostcode ####.## format
+	- FactuurHuisnummer integer
+	- FactuurHuisnummerToevoeging character
+	- Land String
+	-status integer
+
+
+- KaasProduct
+	- idKaas (PK)  integer
+	- omschrijving string
+	- soort string
+	- prijs double Not Null
+	- voorraad integer
+
+
+-Winkelwagen
+	-idWinkelwagen (PK)
+	-idKlant (FK)
+	
+
+
+
+
+
+
+- Klant_Productbestelling
+	-idKlantProductbestelling (PK)
+	-idKlant (FK)
+	-idKaas (FK)
+	-idWinkelwagen (FK)
+	-aantal integer
+	-prijstotaal double
+        -datumvanbestelling date
+	
+  ( Dit is één bestelling (maar meerdere kazen van één soort mogelijk)
+  hiervan kunnen meerdere gemaakt worden per zodat je ook meerdere kazen besteld
+  het totaal wordt in java gebundeld)
+( dit effect geeft: in de database)
+
+            1(PK)  1 klantid  4 idkaas     10 stuks		prijs 99.90  bestelop 1-1-2017  1
+            2      1 klant   99 idkaas     1 stuks		prijs 12.50  bestelop 1-1-2017  1(zelfde moment)
+            3      1 klant   45 idkaas     5 stuks		prijs 62.50  bestelop 2-1-2017	2 (andere winkelwagen)
+            4  ...
+	    5  ...
+	    ...
+
+jhjj
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Bestellingtoestand
+	-idBestellingtoestand integer (PK) (one to one met idKlantproductbestelling)
+	-idKlantProductbestelling (FK) -> kun je idKlant uithalen&product -> kun je Adress uithalen.
+	-toestand
+	-datumvanbehandeld date
+	
+	(deze tabel triggerd één voorraad)
+
+	
+	
+
+
+
+
+
+
+-
+
+Interacties:
+
+- Klant kan meerdere bestellingen doen >>> one to many: klant (pk: klantid) - bestelling (fk: klantId)
+- Per bestelling kunnen meerdere kazen besteld worden >>> one to many:  bestelling (pk: idBestelling) - kaas (fk: idBestelling)
+
+
+Triggers:
+
+- Bij plaatsen bestelling status aanpassen
+- Bij voltooien bestelling voorraad aanpassen
+- Bij verwijderen klant worden bestellingen verwijderd
+
