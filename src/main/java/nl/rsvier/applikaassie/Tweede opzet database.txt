@@ -47,20 +47,20 @@ Actors:
 -Winkelwagen
 	-idWinkelwagen (PK)
 	-idKlant (FK)
+	- aantal integer
+	- prijstotaal double
 
 - Klant_Productbestelling
 	-idKlantProductbestelling (PK)
 	-idKlant (FK)
 	-idKaas (FK)
 	-idWinkelwagen (FK)
-	-aantal integer
-	-prijstotaal double
         -datumvanbestelling date
 	
-  ( Dit is één bestelling (maar meerdere kazen van één soort mogelijk)
+  ( Dit is ï¿½ï¿½n bestelling (maar meerdere kazen van ï¿½ï¿½n soort mogelijk)
   hiervan kunnen meerdere gemaakt worden per zodat je ook meerdere kazen besteld
   het totaal wordt in java gebundeld)
-  ( dit effect geeft: in de database)
+( dit effect geeft: in de database)
 
             1(PK)  1 klantid  4 idkaas     10 stuks		prijs 99.90  bestelop 1-1-2017  1
             2      1 klant   99 idkaas     1 stuks		prijs 12.50  bestelop 1-1-2017  1(zelfde moment)
@@ -70,6 +70,18 @@ Actors:
 	    ...
 
 
+voorbeeld van klant x bestelling (of een soortgelijke naam):
+idBestelling(PK)	idWinkelwagen(FK)	idKlant(FK)	datumvanbestelling	eventueel: prijstotaal	
+
+
+
+
+
+
+
+
+
+
 
 -Bestellingtoestand
 	-idBestellingtoestand integer (PK) (one to one met idKlantproductbestelling)
@@ -77,7 +89,7 @@ Actors:
 	-toestand
 	-datumvanbehandeld date
 	
-	(deze tabel triggerd één voorraad)
+	(deze tabel triggerd ï¿½ï¿½n voorraad)
 
 	
 
@@ -85,6 +97,7 @@ Interacties:
 
 - Klant kan meerdere bestellingen doen >>> one to many: klant (pk: klantid) - bestelling (fk: klantId)
 - Per bestelling kunnen meerdere kazen besteld worden >>> one to many:  bestelling (pk: idBestelling) - kaas (fk: idBestelling)
+- Per bestelling meerdere kazen en dezelfde kaas kan in meerdere bestelling voorkomen >>> many to many: 
 
 
 Triggers:
