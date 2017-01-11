@@ -60,7 +60,7 @@ Actors:
   ( Dit is één bestelling (maar meerdere kazen van één soort mogelijk)
   hiervan kunnen meerdere gemaakt worden per zodat je ook meerdere kazen besteld
   het totaal wordt in java gebundeld)
-( dit effect geeft: in de database)
+  ( dit effect geeft: in de database)
 
             1(PK)  1 klantid  4 idkaas     10 stuks		prijs 99.90  bestelop 1-1-2017  1
             2      1 klant   99 idkaas     1 stuks		prijs 12.50  bestelop 1-1-2017  1(zelfde moment)
@@ -68,18 +68,6 @@ Actors:
             4  ...
 	    5  ...
 	    ...
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -92,14 +80,6 @@ Actors:
 	(deze tabel triggerd één voorraad)
 
 	
-	
-
-
-
-
-
-
--
 
 Interacties:
 
