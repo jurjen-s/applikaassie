@@ -4,61 +4,49 @@ Actors:
 
 
 -Admin  
-	- idAdmin
-	- wachtwoord
-	- status
+	- idAdmin integer
+	- wachtwoord hashed string
+	- status integer
 	- e-mail   string
 	- voornaam string
 	- tussenvoegsel string
 	- achternaam string
-	-status integer	
-
-
-
+	- status integer	
 
 - Medewerker
 	- idMedewerker (PK) integer
-	- wachtwoord ??String??
+	- wachtwoord hashed string
 	- e-mail   string
 	- voornaam string
 	- tussenvoegsel string
 	- achternaam string
 	- status integer
+
 - Klant
 	- idKlant (PK) integer
 	- voornaam string
 	- tussenvoegsel string
 	- achternaam string
 	- telefoonnummer integer
-	- Straat String
-	- Straatnummer interger
-	- Toevoeging Straatnummer character
-	- Plaats String
-	- Postcode ####.## format
+	- BezorgHuisnummer integer
+	- BezorgHuisnummerToevoeging characterarray
+	- BezorgPostcode ####.## format
 	- FactuurPostcode ####.## format
 	- FactuurHuisnummer integer
-	- FactuurHuisnummerToevoeging character
+	- FactuurHuisnummerToevoeging characterarray
 	- Land String
-	-status integer
+	- status integer
 
-
-- KaasProduct
+- Kaas
 	- idKaas (PK)  integer
 	- omschrijving string
 	- soort string
 	- prijs double Not Null
 	- voorraad integer
 
-
 -Winkelwagen
 	-idWinkelwagen (PK)
 	-idKlant (FK)
-	
-
-
-
-
-
 
 - Klant_Productbestelling
 	-idKlantProductbestelling (PK)
