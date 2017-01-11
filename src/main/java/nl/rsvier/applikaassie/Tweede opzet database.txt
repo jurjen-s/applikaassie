@@ -84,7 +84,7 @@ idBestelling(PK)	idWinkelwagen(FK)	idKlant(FK)	datumvanbestelling	eventueel: pri
 	- toestand
 	- datumvanbehandeld date
 	
-	(deze tabel triggerd één voorraad)
+	(deze tabel triggerd de voorraad)
 
 	
 
