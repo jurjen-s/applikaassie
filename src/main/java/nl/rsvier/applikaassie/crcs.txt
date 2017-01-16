@@ -1,0 +1,76 @@
+CRC's
+
+Class: Accounts
+Responsibilities: 	- Login verifiëren
+			(- Login status bijhouden)
+Collaborators:		- Medewerker (heeft accountID)
+			- Klant (heeft accountID)
+			- Database (voor opvragen accountID + wachtwoord)
+
+Class: Medewerkers
+Responsibilities:	- inloggen met eigen account
+Collaborators:		- Klanten (voor aanpassen klantgegevens)
+			- Bestellingen (voor aanpassen bestellingen)
+			- Producten (voor aanpassen producten)			
+
+Class: Klanten
+Responsibilities:	- Nieuwe klantgegevens toevoegen
+			- Klantgegevens verwijderen
+			- Klantgegevens aanpassen
+			- Klantgegevens doorzoeken
+Collaborators:		- Medewerker (kan aanpassingen doen)
+			- Database (opvragen en aanpassen klanten)
+			- Facturen (klant betaalt factuur)
+
+Class: Bestellingen_bundel
+Responsibilities:	- Nieuwe bestellingen toevoegen
+			- Bestellingen verwijderen
+			- Bestellingen aanpassen
+			- Bestellingen doorzoeken
+Collaborators:		- Medewerkers (kan aanpassingen doen)
+			- Klanten (om bestelling aan klant te koppelen)
+			- Bestelling_product (hoeveel van welk product in de besteling_byndel?)
+			- Facturen (geeft prijs door aan facturen)
+			- Database (opvragen en aanpassen bestellingen)
+
+Class: Bestellingen_product
+Responsibilities: 	- Hoeveelheid en type product doorgeven aan bestellingen_bundenl
+Collaborators:		- Producten (welke producten zitten in bestelling)
+			- Bestellingen_byndel (doorgeven hoeveelheid en type product)
+			- Database (opvragen producten en prijs)
+
+Class: Producten
+Responsibilites:	- Nieuwe producten (kazen) toevoegen
+			- Producten verwijderen
+			- Producten aanpassen
+			- Producten doorzoeken
+Collaborators:		- Medewerkers (kan aanpassingen doen)
+			- Bestellingen (producten toevoegen aan bestellingen)
+			- Database (opvragen en aanpassen producten)
+
+Class: Facturen
+Responsibilites:	- Terugkoppelen bedrag + status*
+			- Controleren status factuur
+Collaborators:		- Bestellingen_bundel (opvragen bestelling en totaalprijs + teruggeven status)
+
+Class: Database
+Responsibilities:	- CRUD to database
+Collaborators:		- allemaal behalve Facturen
+
+Class: Applikaassie
+Responsibilities:	- Start het programma
+			- Eindig het programma
+Collaborators:		- UserInput
+			- View
+			- alles?
+
+Class: UserInput
+Responsibilities:	- Registreren user input
+Collaborators:		- Database
+			- View
+
+Class: View
+Responsibilities:	- Laten zien van menu
+			- Laten zien van databasegegevens
+Collaborators:		- Database
+			- Applikaassie
