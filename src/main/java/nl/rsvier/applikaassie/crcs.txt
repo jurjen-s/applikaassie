@@ -65,7 +65,7 @@ Collaborators:		- UserInput
 			- alles?
 
 Class: UserInput
-Responsibilities:	- Registreren user input
+Responsibilities:	- Verwerken user input
 Collaborators:		- Database
 			- View
 
